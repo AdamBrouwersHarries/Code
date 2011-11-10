@@ -1,0 +1,6 @@
+Spare and useful code I've collected written during my time.
+TODO:
+	-Rewrite the linked list class using templates
+	-Rewrite the node class to use templates and allow it to store informtaion
+	-Write wrapper class for general pathfinding?
+	
