@@ -1,1 +1,0 @@
-gcc lmc.c -o lmc.exe -Wall
