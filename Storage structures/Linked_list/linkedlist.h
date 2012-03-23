@@ -1,0 +1,68 @@
+#ifndef LINKEDLIST_H
+#define LINKEDLIST_H
+
+#include "llnode.h"
+
+template <class payload_data>
+class linkedlist {
+public:
+	linkedlist()
+	{
+		dummy_start.next_ptr = &dummy_end;
+		dummy_end.prev_ptr = &dummy_start;
+	}
+	virtual ~linkedlist()
+	{
+	}
+	//function adds a node to the "end" of the list, 
+	//given the payload as an argument
+	void add_node(payload_data new_payload)
+	{
+		llnode<payload_data> *new_node = new llnode<payload_data>;
+		new_node->payload = new_payload;
+		//set pointers for the new node
+		new_node->prev_ptr = dummy_end.prev_ptr;
+		new_node->next_ptr = &dummy_end;
+		//set pointers for its new next and prev nodes
+		new_node->prev_ptr->next_ptr = new_node;
+		new_node->next_ptr->prev_ptr = new_node;
+	}
+	//removes a node from the function
+	//not very safe, simply checks to make sure that it's not
+	//the start or end "dummy" nodes
+	void remove_node(llnode<payload_data> *rem_node)
+	{
+		if(rem_node != NULL && rem_node!=&dummy_start && rem_node!=&dummy_end)
+		{
+			rem_node->prev_ptr->next_ptr = rem_node->next_ptr;
+			rem_node->next_ptr->prev_ptr = rem_node->prev_ptr;
+			delete rem_node;
+		}
+	}
+	llnode<payload_data>* get_first()
+	{
+		if(is_empty() == false)
+		{
+			return dummy_start.next_ptr;
+		}else{
+			return NULL;
+		}
+	}
+	llnode<payload_data>* get_last()
+	{
+		if(is_empty() == false)
+		{
+			return dummy_end.prev_ptr;
+		}else{
+			return NULL;
+		}
+	}
+	bool is_empty()
+	{
+		return !(dummy_start.next_ptr = &dummy_end);
+	}
+	llnode<payload_data> dummy_start;
+	llnode<payload_data> dummy_end;
+};
+
+#endif

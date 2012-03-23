@@ -1,7 +1,8 @@
 #ifndef NODE_H//is node already defined, avoids cyclic defines
 #define NODE_H
 
-#include "../Defines.h"
+#include <string>
+
 class Node
 {
     public:

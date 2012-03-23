@@ -1,7 +1,7 @@
 #ifndef LINKED_NODE_LIST_H//is node already defined, avoids cyclic defines
 #define LINKED_NODE_LIST_H
 
-#include "../Node/Node.h"
+#include "Node.h"
 
 class Linked_Node_List
 {
