@@ -16,7 +16,7 @@ public:
 	}
 	//function adds a node to the "end" of the list, 
 	//given the payload as an argument
-	void add_node(payload_data new_payload)
+	llnode<payload_data> * add_node(payload_data new_payload)
 	{
 		llnode<payload_data> *new_node = new llnode<payload_data>;
 		new_node->payload = new_payload;
@@ -24,8 +24,9 @@ public:
 		new_node->prev_ptr = dummy_end.prev_ptr;
 		new_node->next_ptr = &dummy_end;
 		//set pointers for its new next and prev nodes
-		new_node->prev_ptr->next_ptr = new_node;
-		new_node->next_ptr->prev_ptr = new_node;
+		dummy_end.prev_ptr->next_ptr = new_node;
+		dummy_end.prev_ptr = new_node;
+		return new_node;
 	}
 	//removes a node from the function
 	//not very safe, simply checks to make sure that it's not
@@ -34,8 +35,10 @@ public:
 	{
 		if(rem_node != NULL && rem_node!=&dummy_start && rem_node!=&dummy_end)
 		{
-			rem_node->prev_ptr->next_ptr = rem_node->next_ptr;
-			rem_node->next_ptr->prev_ptr = rem_node->prev_ptr;
+			llnode<payload_data> *prev_node = rem_node->prev_ptr;
+			llnode<payload_data> *next_node = rem_node->next_ptr;
+			prev_node->next_ptr = next_node;
+			next_node->prev_ptr = prev_node;
 			delete rem_node;
 		}
 	}
