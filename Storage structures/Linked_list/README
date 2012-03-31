@@ -1,0 +1,11 @@
+Linked list.
+
+A simple linked list implementation
+
+Finer points:
+	-Uses "dummy" start and end objects
+	-implemeted using c++ templates to allow for use with many different payload types
+	-stores _actual_ objects on heap, instead of pointers to objects, to reduce likelyhood of pointer errors
+
+Other:
+	-included are some tests, and a test program which I wrote while writing the ll to test it (obv...)

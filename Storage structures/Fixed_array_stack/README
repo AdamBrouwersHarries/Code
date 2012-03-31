@@ -1,0 +1,3 @@
+Array based, fixed capacity stack.
+
+A array based stack, with a fixed total capacity, written for applications where having a set number of "recent" items could be useful, for example, a limited breadcrumb trail for pathfinding, or a list of points for drawing a trail behind a fast moving object.
