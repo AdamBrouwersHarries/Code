@@ -1,23 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 int prog_mem[99];
-int acc,acc_negative, prog_c;
+int acc,acc_negative, prog_c=0, halt=1;
 int main (int argc, char** argv)
 {
 	FILE * s_program = fopen(argv[1],"r");
 	FILE * io_file= fopen("io.txt","w");
 	if(s_program != NULL && io_file != NULL)
 	{
-		//read in the file
-		int c = 0;
-		int t = 0;
+		int c = 0,t = 0;
 		while(fscanf(s_program,"%i",&t)!=EOF && c<99)
 		{
-			prog_mem[c]=t%1000;
-			c++;
+			prog_mem[c++]=t%1000;
 		}		
 		int halt = 1;
-		prog_c = 0;
 		while(halt == 1)
 		{
 			int c_inst = prog_mem[prog_c];
@@ -71,7 +67,6 @@ int main (int argc, char** argv)
 	}
 	fclose(s_program);
 	fclose(io_file);
-	//scanf("%i", &prog_c);
 	getchar();
 	return 0;
 }
