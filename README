@@ -4,11 +4,4 @@ What's here:
 	-simple linked list class, which needs a lot of work to be useful.
 	-simple "little man computer" simulator, including a minimal (uncommented) version in 78 lines of c.
 	-example code, explained in the folder "classical code"
-
-TODO:
-	-Rewrite the linked list class using templates
-	-Rewrite the node class to use templates and allow it to store informtaion
-	-Write wrapper class for general pathfinding?
-
-
 	
