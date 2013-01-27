@@ -6,12 +6,17 @@ this is a simple implementation, in c, of the "little man computer" model.
 ##Compiling and running
 
 to run the program with a file of LMC instructions call the program as follows:
+	
 	lmc.exe instructions_file
 	
 to compile the program run the following instructions:
-	standard:
+
+standard:
+
 	gcc lmc.c -o lmc -Wall
-	minimal:
+
+minimal:
+
 	gcc lmc_minimal.c -o lmc_m -Wall
 
 ##Further info
@@ -23,11 +28,15 @@ The minimal version has less verbose commenting, and outputs less while the prog
 ##File breakdown
 
 code files:
-	lmc.c - standard version
-	lmc_minimal.c - minimal version
+
+*lmc.c - standard version
+*lmc_minimal.c - minimal version
+
 instruction files:
-	addition.txt - instructions to add two user inputted numbers
-	difference.txt - finds the difference bettween two user inputted numbers
-	loop.txt - counts down to 0 from a user inputted number
+
+*addition.txt - instructions to add two user inputted numbers
+*difference.txt - finds the difference bettween two user inputted numbers
+*loop.txt - counts down to 0 from a user inputted number
+
 binaries are included without warranty in the "bin" folder
 	
