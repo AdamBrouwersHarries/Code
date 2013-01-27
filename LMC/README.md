@@ -29,14 +29,14 @@ The minimal version has less verbose commenting, and outputs less while the prog
 
 code files:
 
-*lmc.c - standard version
-*lmc_minimal.c - minimal version
+*	lmc.c - standard version
+*	lmc_minimal.c - minimal version
 
 instruction files:
 
-*addition.txt - instructions to add two user inputted numbers
-*difference.txt - finds the difference bettween two user inputted numbers
-*loop.txt - counts down to 0 from a user inputted number
+*	addition.txt - instructions to add two user inputted numbers
+*	difference.txt - finds the difference bettween two user inputted numbers
+*	loop.txt - counts down to 0 from a user inputted number
 
 binaries are included without warranty in the "bin" folder
 	
